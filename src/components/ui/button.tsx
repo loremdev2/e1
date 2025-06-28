@@ -23,9 +23,9 @@ const buttonVariants = cva(
         elevated: "bg-white hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-[4px] hover:-translate-y-[4px] dark:bg-gray-800 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:-translate-x-[4px] dark:hover:-translate-y-[4px] ",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        default: "h-12 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-12 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-20 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
     },
