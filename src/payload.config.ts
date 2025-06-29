@@ -24,12 +24,22 @@ export default buildConfig({
   },
   collections: [Users, Media, Categories, TypesC],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: (() => {
+    if (!process.env.PAYLOAD_SECRET) {
+      throw new Error('PAYLOAD_SECRET env var is required but not set')
+    }
+    return process.env.PAYLOAD_SECRET
+  })(),
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+    url: (() => {
+      if (!process.env.DATABASE_URI) {
+        throw new Error('DATABASE_URI env var is required but not set')
+      }
+      return process.env.DATABASE_URI
+    })(),
   }),
   sharp,
   plugins: [
